@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# TODO: Cambiar la forma de implementar Gnuplot
 
 import math
 import sys
