@@ -7,7 +7,7 @@ Luego instalamos gnuplot con `sudo apt-get install gnuplot` o `dnf install gnupl
 o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `./configure --enable-qt && sudo make clean install`.  
 Observación: Debería instalarse con suporte para la terminal qt que viene incluído en el caso de instalarlo con `apt-get`.
 
-#### Para iniciarlo:  
+### Para iniciarlo
 `python gg.py nombre del archivo`  
 Se puede mirar cualquiera de los ejemplos para entender el formato de entrada.
 
