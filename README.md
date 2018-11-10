@@ -13,7 +13,7 @@ Se puede mirar cualquiera de los ejemplos para entender el formato de entrada.
 
 ### Pruebas
 ![alt text](/img/k8.png)
-![alt text](/img/k2-3.png)
+![alt text](/img/k2-3.png)  
 ![alt text](/img/r4.png)
-![alt text](/img/butterfly.png)
+![alt text](/img/butterfly.png)  
 ![alt text](/img/k1-12.png)
