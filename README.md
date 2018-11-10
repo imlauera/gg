@@ -9,7 +9,7 @@ Observación: Debería instalarse con soporte para la terminal qt que viene incl
 
 ### Para iniciarlo
 `python gg.py nombre del archivo`  
-Se puede mirar cualquiera de los ejemplos para entender el formato de entrada.
+Se puede mirar cualquiera de los archivos en el directorio "ejemplos" para entender el formato de entrada.
 
 #### Pruebas
 ![alt text](/img/k8.png)
