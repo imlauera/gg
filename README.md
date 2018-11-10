@@ -11,7 +11,7 @@ Observación: Debería instalarse con suporte para la terminal qt que viene incl
 `python gg.py nombre del archivo`  
 Se puede mirar cualquiera de los ejemplos para entender el formato de entrada.
 
-### Pruebas
+#### Pruebas
 ![alt text](/img/k8.png)
 ![alt text](/img/k2-3.png)  
 ![alt text](/img/r4.png)
