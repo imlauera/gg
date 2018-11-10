@@ -5,7 +5,7 @@ Para la instalación primero, vamos a necesitar descargar [py-gnuplot](http://so
 Lo descomprimimos y ejecutamos: `python setup.py install`, es lo que nos va a permitir interactuar con *GnuPlot* desde Python. 
 Luego instalamos gnuplot con `sudo apt-get install gnuplot` o `dnf install gnuplot` en Fedora
 o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `./configure --enable-qt && sudo make clean install`.  
-CUIDADO: Debería instalarse con suporte para la terminal qt que viene incluído en el caso de instalarlo con `apt-get`.
+Observación: Debería instalarse con suporte para la terminal qt que viene incluído en el caso de instalarlo con `apt-get`.
 
 #### Para iniciarlo:  
 `python gg.py ejemplos/k8.tgf`
