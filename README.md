@@ -8,7 +8,7 @@ o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `
 Observación: Debería instalarse con suporte para la terminal qt que viene incluído en el caso de instalarlo con `apt-get`.
 
 #### Para iniciarlo:  
-`python gg.py archivo`  
+`python gg.py nombre del archivo`  
 Se puede mirar cualquiera de los ejemplos para entender el formato de entrada.
 
 ### Pruebas
