@@ -8,4 +8,12 @@ o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `
 Observación: Debería instalarse con suporte para la terminal qt que viene incluído en el caso de instalarlo con `apt-get`.
 
 #### Para iniciarlo:  
-`python gg.py ejemplos/k8.tgf`
+`python gg.py archivo`  
+Se puede mirar cualquiera de los ejemplos para entender el formato de entrada.
+
+#### Prubas
+![alt text](/img/k8.png)
+![alt text](/img/k2-3.png)
+![alt text](/img/r4.png)
+![alt text](/img/k1-12.png)
+![alt text](/img/butterfly.png)
