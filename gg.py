@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+cambio todo 
+
+
 import math
 import sys
 import string
