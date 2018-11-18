@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 import math
 import sys
 import string
@@ -21,7 +22,7 @@ def cool(t):
   if t > 1:
     return t - 0.15
   elif t > 0:
-    return t - 0.08
+    return t - 0.001
   else:
     return 0
 
