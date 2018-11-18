@@ -84,7 +84,6 @@ def run_layout(grafo,ancho,alto,M):
         yield pos,V,E
 
     except ZeroDivisionError:
-      print("Oh no")
       continue
     break
 
