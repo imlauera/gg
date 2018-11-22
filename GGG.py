@@ -23,6 +23,7 @@ class LayoutGraph:
     self.fuerzas = {}        
     
     self.iters = iters
+    self.refresh = refresh
     self.c1 = 1.0
     self.c2 = 2.5
 
@@ -52,19 +53,22 @@ class LayoutGraph:
     size = 'set terminal qt size {},{}'.format(width,height)
     self.gplot(size)
 
+    # TODO: Usar variables para representar la cantidad de puntos en los ejes.
     self.gplot('
       set terminal qt persist;
       set key off;
       unset xtics;unset ytics;unset border;unset key;
-      set xrange [-100:700]; set yrange[-250:350]
+      set xrange [0:880];  set yrange[0:550]
       ')
 
     self.gplot('plot NaN')
 
   def dibujar(self):
     ''' Dibuja el estado del grafo en pantalla'''
+    for V,E in self.grafo:
+      
+      
     self.gplot('replot NaN')
-
 
 
   def leer_grafo(self,file_path):
@@ -119,6 +123,10 @@ class LayoutGraph:
 
 def main():
     parser = argparse.ArgumentParser()
+
+    parser.add_argument('-v', '--verbose', 
+                        action='store_true', 
+                        help='Muestra mas informacion')
 
     parser.add_argument('--iters', type=int, 
                         help='Cantidad de iteraciones a efectuar', 
