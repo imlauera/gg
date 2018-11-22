@@ -11,7 +11,7 @@ import numpy
 def iniciar_vertices(V,ancho,alto):
   pos = {}
   for v in V:
-    pos[v] = (random.random()*ancho,random.random()*alto)
+    pos[v] = (random.random()*800,random.random()*300)
   return pos
 
 def fa(x,k):
