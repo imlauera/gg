@@ -113,7 +113,9 @@ def graficar(G,ancho,alto,M):
   g('unset ytics')
   g('unset border')
   g('unset key')
-  g('set xrange [-100:700]; set yrange [-250:350]')
+  
+  # Cantidad de puntos en el rango x e y
+  g(('set xrange [0:{}]; set yrange [0:{}]').format(800,550))
   
   g('plot NaN')
   for pos,V,E in run_layout(G,ancho,alto,M):

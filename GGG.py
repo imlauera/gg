@@ -29,6 +29,7 @@ class LayoutGraph:
 
   def randomize_node_positions(self):
     ''' Inicializa en forma aleatoria las posiciones de los nodos'''
+    (V,E) = self.grafo
     for v in V:
       self.posiciones[v] = (random.random()*width,random.random()*height)
     pass
@@ -41,6 +42,7 @@ class LayoutGraph:
     # 2: Calcular atracciones de aristas (actualiza fuerzas)
     # 3: Calcular fuerza de gravedad (opcional)
     # 4: En base a fuerzas, actualizar posiciones, setear fuerzas a cero
+    
     pass
 
 
@@ -55,7 +57,7 @@ class LayoutGraph:
       set key off;
       unset xtics;unset ytics;unset border;unset key;
       set xrange [-100:700]; set yrange[-250:350]
-    ')
+      ')
 
     self.gplot('plot NaN')
 
@@ -63,7 +65,10 @@ class LayoutGraph:
     ''' Dibuja el estado del grafo en pantalla'''
     self.gplot('replot NaN')
 
+
+
   def leer_grafo(self,file_path):
+    ''' Lee grafo desde un archivo '''
     count = 0 
     with open(file_path,'r') as f:
       cantidad = int(f.readline())
