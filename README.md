@@ -12,7 +12,7 @@ cd gnuplot-py-1.8/
 python setup.py install
 ```
 Luego instalamos gnuplot con `sudo apt-get install gnuplot` o `dnf install gnuplot` en Fedora
-o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `./configure --enable-qt && sudo make clean install`.  
+o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `./configure --enable-qt && sudo make clean install`.  Obs: (Me compiló pero no me instaló la terminal qt)
 Observación: Debería instalarse con soporte para la terminal qt que viene incluído en el caso de instalarlo con `apt-get`.
 
 ### Para iniciarlo
