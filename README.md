@@ -3,7 +3,8 @@
 ### Instalación
 Para la instalación primero, vamos a necesitar descargar [py-gnuplot](http://sourceforge.net/projects/gnuplot-py/files/latest/download?source=files) o `pip install py-gnuplot`.  
 Lo descomprimimos y ejecutamos: `python setup.py install`, es lo que nos va a permitir interactuar con *GnuPlot* desde Python. 
-```sh
+O también se puede instalar py-gnuplot manualmente
+```
 wget http://downloads.sourceforge.net/project/gnuplot-py/Gnuplot-py/1.8/gnuplot-py-1.8.tar.gz
 tar xzf gnuplot-py-1.8.tar.gz
 cd gnuplot-py-1.8/
