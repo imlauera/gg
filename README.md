@@ -19,9 +19,3 @@ Obs.: Me compiló pero no me instaló la terminal qt, debería instalarse con so
 `python gg.py nombre del archivo`  
 Se puede mirar cualquiera de los archivos en el directorio "ejemplos" para entender el formato de entrada.
 
-#### Pruebas
-![alt text](/img/k8.png)
-![alt text](/img/k2-3.png)  
-![alt text](/img/r4.png)
-![alt text](/img/butterfly.png)  
-![alt text](/img/k1-12.png)
