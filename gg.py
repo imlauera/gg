@@ -89,26 +89,28 @@ def run_layout(grafo,ancho,alto,M):
     break
 
 def dibujar_vertice():
-  cmd = 'set object %s circle center %s,%s size 5 fc rgb'
-  colores = ['"black"']
-  cmd =  cmd + "{} fs solid border lc rgb {}".format(random.choice(colores),random.choice(colores))
+  cmd = 'set object %s circle front center %s,%s size 6 fc rgb'
+  colores = ['"white"']
+  black = '"#000000"';
+  cmd =  cmd + "{} fs solid border lc rgb {}".format(random.choice(colores),black)
   return cmd
 
 def dibujar_arista():
-        cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 2 lc rgb '
-        colores = ['"#6A0888','"#4C0B5F"','"#8A0886"']
+        cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 3 lc rgb'
+        colores = ['"#913188"','"#ff0042"','"#237b34"','"#267396"','"#aab319"','"#a91a70"']
         cmd =  cmd+random.choice(colores)
         return cmd
 
 
-ancho_ventana = 'set terminal qt size %s,%s'
+ancho_ventana = 'set term qt size %s,%s'
 
 def graficar(G,ancho,alto,M):
   g = gp.Gnuplot()
   cmd = ancho_ventana % (ancho,alto)
   g(cmd)
-  g('set terminal qt persist')
+  #g('set terminal svg persist')
   g('set key off')
+  #g('set background rgb black')
   g('unset xtics')
   g('unset ytics')
   g('unset border')
