@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# TODO: Mover los ejes acorde a el tamano del dibujo
+
 import math
 import sys
 import string
@@ -11,7 +13,7 @@ import numpy
 def iniciar_vertices(V,ancho,alto):
   pos = {}
   for v in V:
-    pos[v] = (random.random()*800,random.random()*300)
+    pos[v] = (random.random()*600,random.random()*600)
   return pos
 
 def fa(x,k):
@@ -37,7 +39,7 @@ def run_layout(grafo,ancho,alto,M):
       area = ancho*alto
       k = float(0.6*math.sqrt(area/len(V)))
 
-      t = float(10.0)
+      t = float(15.0)
 
       disp = {}
       for v in V:
@@ -54,6 +56,7 @@ def run_layout(grafo,ancho,alto,M):
               Delta = tuple(numpy.subtract(pos[v],pos[u]))
               x,y = Delta
               Modulo_Delta = modulo_vector(x,y)
+              # Niggerlicious
               Delta_sobre_modulo = tuple(d/Modulo_Delta for d in Delta)
               # aux = D/|D| * fr(|D|)
               aux = tuple(q*fr(Modulo_Delta,k) for q in Delta_sobre_modulo)
@@ -89,39 +92,60 @@ def run_layout(grafo,ancho,alto,M):
     break
 
 def dibujar_vertice():
-  cmd = 'set object %s circle front center %s,%s size 6 fc rgb'
+  cmd = 'set object %s circle front center %s,%s size 5 fc rgb'
   colores = ['"white"']
   black = '"#000000"';
   cmd =  cmd + "{} fs solid border lc rgb {}".format(random.choice(colores),black)
   return cmd
 
 def dibujar_arista():
-        cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 5 lc rgb'
-        colores = ['"#913188"','"#ff0042"','"#237b34"','"#267396"','"#eeab03"','"#a91a70"']
+        cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 8 lc rgb'
+        colores = ['"#29b3c7"','"#c729b3"','"#c73d29"','"#b3c729"']
+        #colores = ['"#000000"']
         cmd =  cmd+random.choice(colores)
         return cmd
 
 
 ancho_ventana = 'set term qt size %s,%s'
 
+def max_x(pos):
+  for x,y in pos.values():
+    x 
+
 def graficar(G,ancho,alto,M):
   g = gp.Gnuplot()
   cmd = ancho_ventana % (ancho,alto)
+  max_x1,max_x2 = -100,700
+  max_y1,max_y2 = -210,400
   g(cmd)
-  #g('set terminal svg persist')
-  g('set key off')
-  #g('set background rgb black')
-  g('unset xtics')
-  g('unset ytics')
-  g('unset border')
+  # HORRIBLE - UGLY!!!!!!!!!!
+  g('set border 0')
+  g('set grid front')
+  g('set zeroaxis')
   g('unset key')
   
   # Cantidad de puntos en el rango x e y
-  g(('set xrange [0:{}]; set yrange [0:{}]').format(800,550))
-  
+
+  g(('set xrange [{}:{}]; set yrange [{}:{}]').format(max_x1,max_x2,max_y1,max_y2))
+
   g('plot NaN')
   for pos,V,E in run_layout(G,ancho,alto,M):
     g('unset arrow')
+
+    for x,y in pos.values():
+      if(x > 0 and x> max_x2):
+        max_x2 = x+80
+      elif(x<=0 and x<max_x1):
+        max_x1 = x-80
+
+    for x,y in pos.values():
+      if(y > 0 and y> max_x2):
+        max_y2 = y+80
+      elif(y<=0 and y<max_y1):
+        max_y1 = y-80
+
+    g(('set xrange [{}:{}]; set yrange [{}:{}]').format(max_x1,max_x2,max_y1,max_y2))
+
     # Dibujamos vertices
     id_vertice = 1
     for v in V:
@@ -163,10 +187,10 @@ def lee_grafo_archivo(file_path):
 def main():
   if len(sys.argv) < 2:
     print('Uso: python gg.py <archivo>')
-    return
+    return -1
 
   G = lee_grafo_archivo(sys.argv[1])
-  graficar(G,1000,550,250)
+  graficar(G,950,650,290)
 
 
 if __name__ == '__main__':
