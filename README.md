@@ -16,7 +16,7 @@ o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `
 Obs.: Me compiló pero no me instaló la terminal qt, debería instalarse con soporte para la terminal qt que viene incluído en el caso de instalarlo con `apt-get` y también viene instalado con `dnf` en el caso de Fedora.
 
 ### Para iniciarlo
-`python gg.py nombre del archivo` o `bash show.sh` 
+`python gg.py nombre del archivo` o `bash show.sh`  
 Se puede mirar cualquiera de los archivos en el directorio "ejemplos" para entender el formato de entrada.
 
 ### Hay una versión mejorada en GGG.py que está en desarrollo aún
