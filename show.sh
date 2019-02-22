@@ -20,6 +20,6 @@ for i in $(ls $Dir); do
   python $File $Dir/$i  &
   echo -e "\033[91m$i \033[0m"
   PID=$!
-  sleep $NOP; kill -9 $PID > /dev/null
+  sleep $NOP; kill -9 $PID
 done
 

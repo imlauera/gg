@@ -101,6 +101,7 @@ def dibujar_vertice():
 def dibujar_arista():
         cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 8 lc rgb'
         colores = ['"#29b3c7"','"#c729b3"','"#c73d29"','"#b3c729"']
+        #colores = ['"#0022ff"']
         #colores = ['"#000000"']
         cmd =  cmd+random.choice(colores)
         return cmd
