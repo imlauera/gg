@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-# TODO: Mover los ejes acorde a el tamano del dibujo
-
 import math
 import sys
 import string
@@ -53,37 +51,39 @@ def run_layout(grafo,ancho,alto,M):
           # Fuerza repulsion
           for u in V:
             if (u != v):
+              if(pos[v] == pos[u]):
+                print(pos[v],pos[u],u,v)
               Delta = tuple(numpy.subtract(pos[v],pos[u]))
               x,y = Delta
               Modulo_Delta = modulo_vector(x,y)
               # Niggerlicious
-              Delta_sobre_modulo = tuple(d/Modulo_Delta for d in Delta)
-              # aux = D/|D| * fr(|D|)
-              aux = tuple(q*fr(Modulo_Delta,k) for q in Delta_sobre_modulo)
-              # v.disp = v.disp + D/|D| * fr(|D|)
-              disp[v] = tuple(numpy.add(disp[v],aux))
+              if (Modulo_Delta != 0):
+                Delta_sobre_modulo = tuple(d/Modulo_Delta for d in Delta)
+                # aux = D/|D| * fr(|D|)
+                aux = tuple(q*fr(Modulo_Delta,k) for q in Delta_sobre_modulo)
+                # v.disp = v.disp + D/|D| * fr(|D|)
+                disp[v] = tuple(numpy.add(disp[v],aux))
         # Fuerza atraccion.
         for (g,h) in E:
           Delta = tuple(numpy.subtract(pos[g],pos[h]))
           
           x,y = Delta
           Modulo_Delta = modulo_vector(x,y)
-          
-          Delta_sobre_modulo = tuple(float(d)/float(Modulo_Delta) for d in Delta)
-          aux = tuple(p*fa(Modulo_Delta,k) for p in Delta_sobre_modulo)
-          disp[g] = tuple(numpy.subtract(disp[g],aux))
-          disp[h] = tuple(numpy.add(disp[h],aux))
+          if(Modulo_Delta != 0):
+            Delta_sobre_modulo = tuple(float(d)/float(Modulo_Delta) for d in Delta)
+            aux = tuple(p*fa(Modulo_Delta,k) for p in Delta_sobre_modulo)
+            disp[g] = tuple(numpy.subtract(disp[g],aux))
+            disp[h] = tuple(numpy.add(disp[h],aux))
           # Limitamos desplazamiento.
           # Esta forma de calcular la posicion del vertice es una basura.
         for v in V:
           a,b = disp[v]
           displen = modulo_vector(a,b)
-          aux = tuple( (dd/(displen)*t) for dd in disp[v])
+          aux = tuple( (dd/(displen)*min(displen,t)) for dd in disp[v])
           pos[v] = tuple(numpy.add(pos[v],aux))
           a,b = pos[v]
           pos[v] = (min(ancho/2,max(-ancho/2,a)),
                min(alto/2,max(-alto/2,b)))
-
         t = cool(t)
         yield pos,V,E
 
