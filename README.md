@@ -3,6 +3,7 @@
 ### Instalación
 
 Si estás en Ubuntu/Linux Mint/Debian ejecuta ```make``` considerando que ya tenés pip instalado.  
+#### Instalación Manual
 Para la instalación primero, vamos a necesitar descargar py-gnuplot o `pip install py-gnuplot`, este paquete nos
 va a permitir interactuar con *GnuPlot* desde Python.   
 
