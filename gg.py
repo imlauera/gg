@@ -51,8 +51,6 @@ def run_layout(grafo,ancho,alto,M):
           # Fuerza repulsion
           for u in V:
             if (u != v):
-              if(pos[v] == pos[u]):
-                print(pos[v],pos[u],u,v)
               Delta = tuple(numpy.subtract(pos[v],pos[u]))
               x,y = Delta
               Modulo_Delta = modulo_vector(x,y)
@@ -101,8 +99,6 @@ def dibujar_vertice():
 def dibujar_arista():
         cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 8 lc rgb'
         colores = ['"#342561"','"#5D42AD"','"#9187AD"','"#514C61"']
-        #colores = ['"#0022ff"']
-        #colores = ['"#000000"']
         cmd =  cmd+random.choice(colores)
         return cmd
 
@@ -116,7 +112,7 @@ def max_x(pos):
 def graficar(G,ancho,alto,M):
   g = gp.Gnuplot()
   cmd = ancho_ventana % (ancho,alto)
-  max_x1,max_x2 = -100,700
+  max_x1,max_x2 = -100,600
   max_y1,max_y2 = -210,400
   g(cmd)
   # HORRIBLE - UGLY!!!!!!!!!!
