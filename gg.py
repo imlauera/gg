@@ -37,7 +37,7 @@ def run_layout(grafo,ancho,alto,M):
       area = ancho*alto
       k = float(0.6*math.sqrt(area/len(V)))
 
-      t = float(15.0)
+      t = float(25.0)
 
       disp = {}
       for v in V:
@@ -112,8 +112,8 @@ def max_x(pos):
 def graficar(G,ancho,alto,M):
   g = gp.Gnuplot()
   cmd = ancho_ventana % (ancho,alto)
-  max_x1,max_x2 = -100,600
-  max_y1,max_y2 = -210,400
+  max_x1,max_x2 = 50,600
+  max_y1,max_y2 = -40,400
   g(cmd)
   # HORRIBLE - UGLY!!!!!!!!!!
   g('set border 0')
@@ -130,16 +130,16 @@ def graficar(G,ancho,alto,M):
     g('unset arrow')
 
     for x,y in pos.values():
-      if(x > 0 and x> max_x2):
+      if(x> max_x2):
         max_x2 = x+80
-      elif(x<=0 and x<max_x1):
+      elif(x<max_x1):
         max_x1 = x-80
 
     for x,y in pos.values():
-      if(y > 0 and y> max_x2):
-        max_y2 = y+80
-      elif(y<=0 and y<max_y1):
-        max_y1 = y-80
+      if(y> max_x2):
+        max_y2 = y+50
+      elif(y<max_y1):
+        max_y1 = y-50
 
     g(('set xrange [{}:{}]; set yrange [{}:{}]').format(max_x1,max_x2,max_y1,max_y2))
 
