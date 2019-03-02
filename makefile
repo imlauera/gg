@@ -1,3 +1,3 @@
 all:
-	@pip install gnuplot-py
+	@pip install PyGnuplot
 	@sudo apt-get install gnuplot
