@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 
 import math
 import sys
@@ -103,7 +103,7 @@ def dibujar_arista():
         return cmd
 
 
-ancho_ventana = 'set term x11 size %s,%s'
+ancho_ventana = 'set term qt size %s,%s'
 
 def max_x(pos):
   for x,y in pos.values():
