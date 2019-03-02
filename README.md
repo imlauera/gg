@@ -9,10 +9,7 @@ va a permitir interactuar con *GnuPlot* desde Python.
 
 O también se puede instalar py-gnuplot manualmente:
 ```
-wget http://downloads.sourceforge.net/project/gnuplot-py/Gnuplot-py/1.8/gnuplot-py-1.8.tar.gz
-tar xzf gnuplot-py-1.8.tar.gz
-cd gnuplot-py-1.8/
-python setup.py install
+pip install http://prdownloads.sourceforge.net/gnuplot-py/gnuplot-py-1.8.tar.gz?download
 ```
 Luego instalamos gnuplot con `sudo apt-get install gnuplot` o `dnf install gnuplot` en Fedora
 o [compilándolo](https://sourceforge.net/projects/gnuplot/files/gnuplot/) con `./configure --enable-qt && sudo make clean install`.  
