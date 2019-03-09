@@ -219,7 +219,6 @@ def main():
     
   # Ejecutamos el layout
   layout_gr.layout()
-
   print("Press enter to exit")
   raw_input()
   return
