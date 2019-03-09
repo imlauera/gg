@@ -38,8 +38,6 @@ class LayoutGraph:
     # Ejes
     self.max_x1,self.max_x2 = 50,200
     self.max_y1,self.max_y2 = -40,200
-    self.cambiado = 0
-
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
     self.lista_colores_arista = ['"#342561"','"#5D42AD"','"#9187AD"','"#514C61"'] 
