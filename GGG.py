@@ -170,8 +170,6 @@ class LayoutGraph:
     
     # Ultimo dibujado al final
     self.dibujar()
-    print("Press enter to exit")
-    raw_input()
 
 
 def leer_grafo(file_path):
@@ -221,6 +219,9 @@ def main():
     
   # Ejecutamos el layout
   layout_gr.layout()
+
+  print("Press enter to exit")
+  raw_input()
   return
 
 if __name__ == '__main__':
