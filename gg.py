@@ -39,6 +39,7 @@ def run_layout(grafo,ancho,alto,M):
 
       t = float(25.0)
 
+      # desplazamiento
       disp = {}
       for v in V:
         disp[v] = (0.0,0.0)
@@ -64,7 +65,7 @@ def run_layout(grafo,ancho,alto,M):
         # Fuerza atraccion.
         for (g,h) in E:
           Delta = tuple(numpy.subtract(pos[g],pos[h]))
-          
+
           x,y = Delta
           Modulo_Delta = modulo_vector(x,y)
           if(Modulo_Delta != 0):
@@ -97,7 +98,7 @@ def dibujar_vertice():
   return cmd
 
 def dibujar_arista():
-        cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 8 lc rgb'
+        cmd = 'set arrow nohead from %s,%s to %s,%s filled back lw 7 lc rgb'
         colores = ['"#342561"','"#5D42AD"','"#9187AD"','"#514C61"']
         cmd =  cmd+random.choice(colores)
         return cmd
@@ -105,43 +106,26 @@ def dibujar_arista():
 
 ancho_ventana = 'set term qt size %s,%s'
 
-def max_x(pos):
-  for x,y in pos.values():
-    x 
 
 def graficar(G,ancho,alto,M):
   g = gp.Gnuplot()
   cmd = ancho_ventana % (ancho,alto)
-  max_x1,max_x2 = 50,600
+  max_x1,max_x2 = 50,400
   max_y1,max_y2 = -40,400
   g(cmd)
-  # HORRIBLE - UGLY!!!!!!!!!!
-  g('set border 0')
+  # HORRIBLE
+  g('unset border')
   g('set grid front')
-  g('set zeroaxis')
+  g('unset zeroaxis')
   g('unset key')
-  
+
   # Cantidad de puntos en el rango x e y
 
   g(('set xrange [{}:{}]; set yrange [{}:{}]').format(max_x1,max_x2,max_y1,max_y2))
 
   g('plot NaN')
-  for pos,V,E in run_layout(G,ancho,alto,M):
+  for pos,V,E in run_layout(G,ancho+50,alto+200,M):
     g('unset arrow')
-
-    for x,y in pos.values():
-      if(x> max_x2):
-        max_x2 = x+80
-      elif(x<max_x1):
-        max_x1 = x-80
-
-    for x,y in pos.values():
-      if(y> max_x2):
-        max_y2 = y+50
-      elif(y<max_y1):
-        max_y1 = y-50
-
-    g(('set xrange [{}:{}]; set yrange [{}:{}]').format(max_x1,max_x2,max_y1,max_y2))
 
     # Dibujamos vertices
     id_vertice = 1
@@ -159,6 +143,19 @@ def graficar(G,ancho,alto,M):
       cmd = cmd % (a,b,c,d)
       g(cmd);
     g('replot')
+
+    for x,y in pos.values():
+      if(x>= max_x2):
+        max_x2 = x+80
+      elif(x<=max_x1):
+        max_x1 = x-80
+      elif(y>= max_y2):
+        max_y2 = y+50
+      elif(y<=max_y1):
+        max_y1 = y-50
+    g(('set xrange [{}:{}]; set yrange [{}:{}]').format(max_x1,max_x2,max_y1,max_y2))
+
+
   while True:
     time.sleep(100)
 
@@ -166,12 +163,12 @@ def lee_grafo_archivo(file_path):
   count = 0
   with open(file_path,'r') as f:
     cantidad = int(f.readline())
-    
+
     Vertices = []
     for i in range(0,cantidad):
       elem = f.readline().strip()
       Vertices.append(elem)
-    
+
     Aristas = []
     for line in f:
       elem = line.strip().split()
