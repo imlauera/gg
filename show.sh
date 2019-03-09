@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-File="gg.py"
+File="GGG.py"
 NOP=7
 Dir="ejemplos"
 
@@ -17,9 +17,10 @@ Dir="ejemplos"
 
 echo -ne "\033[92mLeyendo archivos: $i \033[0m"
 for i in $(ls $Dir); do 
-  python $File $Dir/$i  &
   echo -e "\033[91m$i \033[0m"
-  PID=$!
-  sleep $NOP; kill -9 $PID
+  (
+    sleep $NOP;
+    echo -e "\n"
+  ) | python $File $Dir/$i  
 done
 

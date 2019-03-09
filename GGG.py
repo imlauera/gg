@@ -43,18 +43,18 @@ class LayoutGraph:
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
     self.lista_colores_arista = ['"#342561"','"#5D42AD"','"#9187AD"','"#514C61"'] 
-    self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid border lc rgb {}'
+    self.formato_vertice = 'set object {} circle front center {},{} size 4 fc rgb {} fs solid border lc rgb {}'
     self.vertice_color = '"#000000"'
     self.lista_colores_vertice = ['"white"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
-    self.t = float(25.0)
+    self.t = float(29.0)
 
 
   def randomize_node_positions(self):
     for v in self.V:
-      self.posiciones[v] = (random.random()*self.width/2,random.random()*self.height/2)
+      self.posiciones[v] = (random.random()*self.width/1.7,random.random()*self.height/1.7)
   # Fuerza atraccion
   def fa(self,delta):
     return float(self.c2*(delta**2)/self.k)
@@ -141,7 +141,6 @@ class LayoutGraph:
       a,b = self.posiciones[e[0]]
       c,d = self.posiciones[e[1]]
       Dibujar_Arista = (self.formato_arista+" ").format(a,b,c,d,random.choice(self.lista_colores_arista))
-      print(Dibujar_Arista)
       self.gplot(Dibujar_Arista)
 
     self.actualizar_ejes()
@@ -173,6 +172,7 @@ class LayoutGraph:
     
     # Ultimo dibujado al final
     self.dibujar()
+    print("Press enter to exit")
     raw_input()
 
 
