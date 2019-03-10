@@ -36,13 +36,13 @@ class LayoutGraph:
     self.term = 'qt'
 
     # Ejes
-    self.max_x1,self.max_x2 = 50,200
-    self.max_y1,self.max_y2 = -40,200
+    self.max_x1,self.max_x2 = 100,200
+    self.max_y1,self.max_y2 = -100,400
 
-    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
-    self.lista_colores_arista = ['"#342561"','"#5D42AD"','"#9187AD"','"#514C61"'] 
+    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 12 lc rgb {}'
+    self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
     self.formato_vertice = 'set object {} circle front center {},{} size 4 fc rgb {} fs solid border lc rgb {}'
-    self.vertice_color = '"#000000"'
+    self.vertice_color = '"black"'
     self.lista_colores_vertice = ['"white"']
 
 
@@ -52,7 +52,7 @@ class LayoutGraph:
 
   def randomize_node_positions(self):
     for v in self.V:
-      self.posiciones[v] = (random.random()*self.width/1.7,random.random()*self.height/1.7)
+      self.posiciones[v] = (random.random()*self.width/1.5,random.random()*self.height/1.7)
   # Fuerza atraccion
   def fa(self,delta):
     return float(self.c2*(delta**2)/self.k)
@@ -121,7 +121,14 @@ class LayoutGraph:
     size = 'set terminal {} size {},{}'.format(self.term,self.width,self.height)
     self.gplot(size)
 
-    self.gplot(('unset border;set grid front;unset zeroaxis;unset key;set xrange [{}:{}];set yrange [{}:{}];').format(self.max_x1,self.max_x2,self.max_y1,self.max_y2))
+    self.gplot(('''
+    unset border;
+    unset zeroaxis;
+    unset key;
+    unset ytics;
+    unset xtics;
+    set xrange [{}:{}];
+    set yrange [{}:{}];''').format(self.max_x1,self.max_x2,self.max_y1,self.max_y2))
     self.gplot('plot NaN')
 
 
