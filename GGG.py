@@ -36,10 +36,10 @@ class LayoutGraph:
     self.term = 'qt'
 
     # Ejes
-    self.max_x1,self.max_x2 = 100,200
+    self.max_x1,self.max_x2 = 50,600
     self.max_y1,self.max_y2 = -100,400
 
-    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 12 lc rgb {}'
+    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 10 lc rgb {}'
     self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
     self.formato_vertice = 'set object {} circle front center {},{} size 4 fc rgb {} fs solid border lc rgb {}'
     self.vertice_color = '"black"'
@@ -105,9 +105,9 @@ class LayoutGraph:
   def actualizar_ejes(self):
     for x,y in self.posiciones.values():
       if(x>= self.max_x2):
-        self.max_x2 = x+80;
+        self.max_x2 = x;
       elif (x<=self.max_x1):
-        self.max_x1 = x-80;
+        self.max_x1 = x-20;
       elif(y >= self.max_y2):
         self.max_y2 = y+50;
       elif(y<=self.max_y1):
@@ -125,8 +125,6 @@ class LayoutGraph:
     unset border;
     unset zeroaxis;
     unset key;
-    unset ytics;
-    unset xtics;
     set xrange [{}:{}];
     set yrange [{}:{}];''').format(self.max_x1,self.max_x2,self.max_y1,self.max_y2))
     self.gplot('plot NaN')
@@ -148,6 +146,7 @@ class LayoutGraph:
       Dibujar_Arista = (self.formato_arista+" ").format(a,b,c,d,random.choice(self.lista_colores_arista))
       self.gplot(Dibujar_Arista)
 
+    #self.actualizar_ejes()
     self.actualizar_ejes()
     self.gplot('replot')
 
@@ -218,8 +217,10 @@ def main():
     leer_grafo(args.file_name), 
     iters=args.iters,
     refresh=1,
-    c1=1.0,
-    c2=1.0,
+    # Repulsion
+    c1=0.4,
+    # Atraccion
+    c2=0.6,
     width=950,
     height=650
   )
