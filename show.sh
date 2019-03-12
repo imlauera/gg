@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 File="GGG.py"
-NOP=4
+NOP=5
 Dir="ejemplos"
 
 #for i in $(ls $Dir); do 

@@ -39,10 +39,10 @@ class LayoutGraph:
     self.max_x1,self.max_x2 = 50,600
     self.max_y1,self.max_y2 = -100,400
 
-    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 10 lc rgb {}'
+    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back  lw 11 lc rgb {}'
     self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
-    self.formato_vertice = 'set object {} circle front center {},{} size 4 fc rgb {} fs solid border lc rgb {}'
-    self.vertice_color = '"black"'
+    self.formato_vertice = 'set object {} circle front center {},{} size 3.4 fc rgb {} fs empty border lw 1 lc rgb {}'
+    self.vertice_color = '"white"'
     self.lista_colores_vertice = ['"white"']
 
 
@@ -122,8 +122,10 @@ class LayoutGraph:
     self.gplot(size)
 
     self.gplot(('''
+    set style line 101 lc rgb '#808080' lt 3 lw 3
+    set border 3 front ls 101
+    set tics scale 0.75
     unset border;
-    unset zeroaxis;
     unset key;
     set xrange [{}:{}];
     set yrange [{}:{}];''').format(self.max_x1,self.max_x2,self.max_y1,self.max_y2))
