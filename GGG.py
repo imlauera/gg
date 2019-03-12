@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 import argparse
 import Gnuplot as gp
@@ -41,8 +42,8 @@ class LayoutGraph:
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back  lw 11 lc rgb {}'
     self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
-    self.formato_vertice = 'set object {} circle front center {},{} size 3.4 fc rgb {} fs empty border lw 1 lc rgb {}'
-    self.vertice_color = '"white"'
+    self.formato_vertice = 'set object {} circle front center {},{} size 4 fc rgb {} fs transparent solid .7 noborder'
+    # empty border lw 1 lc rgb {} transparent'
     self.lista_colores_vertice = ['"white"']
 
 
@@ -139,7 +140,7 @@ class LayoutGraph:
     id_vertice = 1
     for v in set(self.V):
       x,y = self.posiciones[v]
-      Dibujar_Vertice = (self.formato_vertice+" ").format(id_vertice,x,y,random.choice(self.lista_colores_vertice),self.vertice_color)
+      Dibujar_Vertice = (self.formato_vertice+" ").format(id_vertice,x,y,random.choice(self.lista_colores_vertice))
       self.gplot(Dibujar_Vertice)
       id_vertice += 1
     for e in self.E:
