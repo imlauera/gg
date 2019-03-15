@@ -1,18 +1,16 @@
 #!/usr/bin/bash
 
 File="GGG.py"
+File2="gg.py"
 NOP=5
 Dir="ejemplos"
 
 #for i in $(ls $Dir); do 
-#  while : ; do
-#    python $File $Dir/$i  &
-#    PID=$!
-#    echo -n "Otra vez? [y/N]"; read AGAIN; kill -9 $PID
-#    echo $AGAIN
-#    if [ -z $AGAIN ]; then break; fi
-#  done
+#  python $File2 $Dir/$i  &
+#  PID=$!
+#  sleep $NOP; kill -9 $PID
 #done
+
 
 
 echo -ne "\033[92mLeyendo archivos: $i \033[0m"

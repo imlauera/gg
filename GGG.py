@@ -125,7 +125,6 @@ class LayoutGraph:
     self.gplot(('''
     set style line 101 lc rgb '#808080' lt 3 lw 3
     set border 3 front ls 101
-    set tics scale 0.75
     unset border;
     unset key;
     set xrange [{}:{}];
