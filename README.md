@@ -19,4 +19,4 @@ Obs.: Me compiló pero no me instaló la terminal qt, debería instalarse con so
 `python gg.py nombre del archivo` o `bash show.sh`  
 Se puede mirar cualquiera de los archivos en el directorio "ejemplos" para entender el formato de entrada.
 
-### Hay una versión mejorada en GGG.py que está en desarrollo aún
+### La versión mejorada es GGG.py 
