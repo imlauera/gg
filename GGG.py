@@ -41,11 +41,7 @@ class LayoutGraph:
     self.max_y1,self.max_y2 = -100,400
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 9 lc rgb {}'
-    #self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
-    #self.lista_colores_arista = ['"#d9d9d9"','"#bf4aa8"','"#51d0de"']
     self.lista_colores_arista = ['"#fc5226"','"#1dbab4"','"#1c77ac"','"#1561ad']
-    #self.lista_colores_arista = ['"#bccbde"','"#c2dde6"','"#431c5d"','"#e05915"']
-    #self.lista_colores_arista = ['"#6ed3cf"','"#9068be"','"#e1e8f0"','"#e62739"']
     self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
     # empty border lw 1 lc rgb {} transparent'
     self.lista_colores_vertice = ['"#eeeeee"']
