@@ -19,6 +19,6 @@ for i in $(ls $Dir); do
   (
     sleep $NOP;
     echo -e "\n"
-  ) | python3 $File $Dir/$i  
+  ) | python2 $File $Dir/$i  
 done
 

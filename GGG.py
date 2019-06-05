@@ -40,11 +40,15 @@ class LayoutGraph:
     self.max_x1,self.max_x2 = 50,600
     self.max_y1,self.max_y2 = -100,400
 
-    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back  lw 11 lc rgb {}'
-    self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
-    self.formato_vertice = 'set object {} circle front center {},{} size 4 fc rgb {} fs transparent solid .7 noborder'
+    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 9 lc rgb {}'
+    #self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
+    self.lista_colores_arista = ['"#d9d9d9"','"#bf4aa8"','"#51d0de"']
+    #self.lista_colores_arista = ['"#fc5226"','"#1dbab4"','"#1c77ac"','"#1561ad']
+    #self.lista_colores_arista = ['"#bccbde"','"#c2dde6"','"#431c5d"','"#e05915"']
+    #self.lista_colores_arista = ['"#6ed3cf"','"#9068be"','"#e1e8f0"','"#e62739"']
+    self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
     # empty border lw 1 lc rgb {} transparent'
-    self.lista_colores_vertice = ['"white"']
+    self.lista_colores_vertice = ['"#eeeeee"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
@@ -123,9 +127,9 @@ class LayoutGraph:
     self.gplot(size)
 
     self.gplot(('''
-    set style line 101 lc rgb '#808080' lt 3 lw 3
-    set border 3 front ls 101
     unset border;
+    unset xtics;
+    unset ytics;
     unset key;
     set xrange [{}:{}];
     set yrange [{}:{}];''').format(self.max_x1,self.max_x2,self.max_y1,self.max_y2))
