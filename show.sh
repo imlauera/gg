@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 File="GGG.py"
-File2="gg.py"
 NOP=5
 Dir="ejemplos"
 
