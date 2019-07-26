@@ -119,16 +119,17 @@ class LayoutGraph:
   def create_view(self):
     self.gplot = gp.Gnuplot()
 
-    size = 'set terminal {} size {},{}'.format(self.term,self.width,self.height)
+    size = 'set term {} size {},{}'.format(self.term,self.width,self.height)
     self.gplot(size)
 
     self.gplot(('''
-    unset border;
-    unset xtics;
-    unset ytics;
-    unset key;
-    set xrange [{}:{}];
-    set yrange [{}:{}];''').format(self.max_x1,self.max_x2,self.max_y1,self.max_y2))
+      unset border;
+      unset xtics;
+      unset ytics;
+      unset key;
+      set xrange [{}:{}];
+      set yrange [{}:{}];''').format(self.max_x1,self.max_x2,self.max_y1,self.max_y2))
+
     self.gplot('plot NaN')
 
 
