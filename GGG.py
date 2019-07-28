@@ -42,8 +42,8 @@ class LayoutGraph:
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 9 lc rgb {}'
     self.lista_colores_arista = ['"#fc5226"','"#1dbab4"','"#1c77ac"']
-    self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
-    # empty border lw 1 lc rgb {} transparent'
+    # Borde con relleno
+    self.formato_vertice = 'set object {} circle front center {},{} size 4.3 fc rgb {} fs solid noborder'
     self.lista_colores_vertice = ['"#eeeeee"']
 
 
