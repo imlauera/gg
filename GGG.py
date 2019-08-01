@@ -42,9 +42,9 @@ class LayoutGraph:
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 9 lc rgb {}'
     self.lista_colores_arista = ['"#fc5226"','"#1dbab4"','"#1c77ac"']
-    # Borde con relleno
+    # Borde 
     self.formato_vertice = 'set object {} circle front center {},{} size 3.5 fc rgb {} fs solid noborder'
-    self.lista_colores_vertice = ['"#f4f4f4"']
+    self.lista_colores_vertice = ['"#d2e1f0"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
