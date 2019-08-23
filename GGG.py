@@ -34,19 +34,19 @@ class LayoutGraph:
     self.c1 = c1
     self.c2 = c2
     # x11,qt o wxt
-    self.term = 'qt'
+    self.term = 'x11'
 
     # Ejes
-      # Ancho
+    # Ancho
     self.max_x1,self.max_x2 = 50,600
-      # Alto
+    # Alto
     self.max_y1,self.max_y2 = -100,400
+
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
     self.lista_colores_arista = ['"#7c79ff"','"#4493ed"','"#757cf4"']
     #self.lista_colores_arista = ['"#fc5226"','"#000"']
-
-    self.formato_vertice = 'set object {} circle front center {},{} size 3.5 fc rgb {} fs solid noborder'
+    self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
     self.lista_colores_vertice = ['"#dcb2dc"']
 
 
@@ -125,7 +125,7 @@ class LayoutGraph:
   def create_view(self):
     self.gplot = gp.Gnuplot()
 
-    size = 'set term {} size {},{}'.format(self.term,self.width,self.height)
+    size = "set term {} linewidth 6.5 size {},{}".format(self.term,self.width,self.height)
     self.gplot(size)
 
     self.gplot(('''
@@ -230,7 +230,7 @@ def main():
     c1=0.4,
     # Atraccion
     c2=0.5,
-    width=850,
+    width=800,
     height=650
   )
     
