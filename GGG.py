@@ -229,8 +229,8 @@ def main():
     # Repulsion
     c1=0.4,
     # Atraccion
-    c2=0.6,
-    width=950,
+    c2=0.5,
+    width=850,
     height=650
   )
     
