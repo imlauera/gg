@@ -38,16 +38,16 @@ class LayoutGraph:
 
     # Ejes
       # Ancho
-    self.max_x1,self.max_x2 = 50,600
+    self.max_x1,self.max_x2 = 50*3,600*3
       # Alto
-    self.max_y1,self.max_y2 = -100,400
+    self.max_y1,self.max_y2 = -100*3,400*3
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
-    self.lista_colores_arista = ['"#7c79ff"','"#4493ed"','"#757cf4"']
+    self.lista_colores_arista = ['"#fc5226"','"#006600"','"#1c77ac"']
     #self.lista_colores_arista = ['"#fc5226"','"#000"']
 
     self.formato_vertice = 'set object {} circle front center {},{} size 3.5 fc rgb {} fs solid noborder'
-    self.lista_colores_vertice = ['"#ffaeac"']
+    self.lista_colores_vertice = ['"#f7d2b8"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
@@ -102,11 +102,8 @@ class LayoutGraph:
       aux = tuple( (dd/(displen) * min(displen,self.t)) for dd in self.fuerzas[v])
       self.posiciones[v] = tuple(numpy.add(self.posiciones[v],aux))
       a,b = self.posiciones[v]
-      '''
-      Funciona pero no lo necesito porque agrando los ejes y me deja como un cuadrado el c15
       self.posiciones[v] = (min(self.width/2,max(-self.width/2,a)),
                             min(self.height/2,max(-self.height/2,b)))
-      '''
     self.cool()
 
   def actualizar_ejes(self):
