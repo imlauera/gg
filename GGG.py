@@ -40,15 +40,16 @@ class LayoutGraph:
     self.max_x1,self.max_x2 = 50,600
     self.max_y1,self.max_y2 = -100,400
 
-    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 9 lc rgb {}'
-    self.lista_colores_arista = ['"#fc5226"','"#1dbab4"','"#1c77ac"']
-    # Borde 
+    self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
+    self.lista_colores_arista = ['"#fc5226"','"#006600"','"#1c77ac"']
+    #self.lista_colores_arista = ['"#fc5226"','"#000"']
+
     self.formato_vertice = 'set object {} circle front center {},{} size 3.5 fc rgb {} fs solid noborder'
-    self.lista_colores_vertice = ['"#d2e1f0"']
+    self.lista_colores_vertice = ['"#eaf2ea"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
-    self.t = float(29.0)
+    self.t = float(24.0)
 
 
   def randomize_node_positions(self):
