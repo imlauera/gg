@@ -47,7 +47,7 @@ class LayoutGraph:
     #self.lista_colores_arista = ['"#fc5226"','"#000"']
 
     self.formato_vertice = 'set object {} circle front center {},{} size 3.5 fc rgb {} fs solid noborder'
-    self.lista_colores_vertice = ['"#ffaeac"']
+    self.lista_colores_vertice = ['"#dcb2dc"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
