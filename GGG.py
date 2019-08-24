@@ -150,7 +150,7 @@ class LayoutGraph:
     for v in set(self.V):
       x,y = self.posiciones[v]
       Dibujar_Vertice = (self.formato_vertice+" ").format(id_vertice,x,y,random.choice(self.lista_colores_vertice))
-      Dibujar_Etiqueta = (self.formato_label+" ").format(id_vertice,x,y,v);
+      Dibujar_Etiqueta = (self.formato_label).format(id_vertice,x,y,v);
       self.gplot(Dibujar_Vertice)
       self.gplot(Dibujar_Etiqueta)
       id_vertice += 1
