@@ -46,7 +46,10 @@ class LayoutGraph:
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
     self.lista_colores_arista = ['"#7c79ff"','"#4493ed"','"#757cf4"']
     #self.lista_colores_arista = ['"#fc5226"','"#000"']
+    #self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
     self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
+    self.formato_label = 'set label {} at {},{} "{}" front center'
+
     self.lista_colores_vertice = ['"#dcb2dc"']
 
 
@@ -148,7 +151,9 @@ class LayoutGraph:
     for v in set(self.V):
       x,y = self.posiciones[v]
       Dibujar_Vertice = (self.formato_vertice+" ").format(id_vertice,x,y,random.choice(self.lista_colores_vertice))
+      Dibujar_Etiqueta = (self.formato_label+" ").format(id_vertice,x,y,v);
       self.gplot(Dibujar_Vertice)
+      self.gplot(Dibujar_Etiqueta)
       id_vertice += 1
     for e in self.E:
       a,b = self.posiciones[e[0]]
