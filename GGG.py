@@ -67,7 +67,7 @@ class LayoutGraph:
     return float(self.c1*(self.k**2)/delta)
   def cool(self):
     if self.t > 1:
-      self.t = self.t - 0.15
+      self.t = self.t - 0.25
     elif self.t > 0:
       self.t = self.t - 0.001
     else:
