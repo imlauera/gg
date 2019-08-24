@@ -45,8 +45,7 @@ class LayoutGraph:
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
     self.lista_colores_arista = ['"#7c79ff"','"#4493ed"','"#757cf4"']
-    #self.lista_colores_arista = ['"#fc5226"','"#000"']
-    #self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
+
     self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
     self.formato_label = 'set label {} at {},{} "{}" front center'
 
