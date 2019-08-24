@@ -125,7 +125,7 @@ class LayoutGraph:
   def create_view(self):
     self.gplot = gp.Gnuplot()
 
-    size = "set term {} linewidth 6.5 size {},{}".format(self.term,self.width,self.height)
+    size = "set term {} linewidth 7 size {},{}".format(self.term,self.width,self.height)
     # size = "set term {} size {},{}".format(self.term,self.width,self.height)
     self.gplot(size)
 
