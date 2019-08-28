@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 File="GGG.py"
 NOP=5
