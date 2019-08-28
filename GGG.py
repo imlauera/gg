@@ -44,12 +44,12 @@ class LayoutGraph:
 
 
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back lw 7 lc rgb {}'
-    self.lista_colores_arista = ['"#7c79ff"','"#4493ed"','"#757cf4"']
+    self.lista_colores_arista = ['"#3b4f5e"','"#2b2645"','"#394249"']
 
-    self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs solid noborder'
+    self.formato_vertice = 'set object {} circle front center {},{} size 8 fc rgb {} fs solid noborder'
     self.formato_label = 'set label {} at {},{} "{}" front center'
 
-    self.lista_colores_vertice = ['"#dcb2dc"']
+    self.lista_colores_vertice = ['"#0cbce4"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
@@ -105,7 +105,7 @@ class LayoutGraph:
       self.posiciones[v] = tuple(numpy.add(self.posiciones[v],aux))
       a,b = self.posiciones[v]
       '''
-      Funciona pero no lo necesito porque agrando los ejes y me deja como un cuadrado el c15
+      Funciona pero no lo necesito porque alejo los ejes y me deja como un cuadrado el c15
       self.posiciones[v] = (min(self.width/2,max(-self.width/2,a)),
                             min(self.height/2,max(-self.height/2,b)))
       '''
@@ -235,8 +235,8 @@ def main():
     c1=0.4,
     # Atraccion
     c2=0.5,
-    width=800,
-    height=650
+    width=850,
+    height=750
   )
     
   # Ejecutamos el layout
