@@ -44,13 +44,12 @@ class LayoutGraph:
 
     self.lista_colores_arista = ['"#3b4f5e"','"#2b2645"','"#394249"']
     self.formato_arista = 'set arrow nohead from {},{} to {},{} filled back  lw 8 lc rgb {}'
-    #self.lista_colores_arista = ['"#ffe66d"','"#fa5775"','"#bfed17"','"#4fd0c7"'] 
+
     #self.formato_vertice = 'set object {} circle front center {},{} size 5 fc rgb {} fs transparent solid .7 noborder'
     self.formato_vertice = 'set object {} circle front center {},{} size 8 fc rgb {} fs solid noborder'
     self.formato_label = 'set label {} at {},{} "{}" front center'
 
     self.lista_colores_vertice = ['"#0cbce4"']
-    #self.lista_colores_vertice = ['"#eeeeee"']
 
 
     self.k = float(0.6*math.sqrt(self.area/len(self.V)))
