@@ -235,8 +235,8 @@ def main():
     c1=0.4,
     # Atraccion
     c2=0.5,
-    width=850,
-    height=750
+    width=650,
+    height=550
   )
     
   # Ejecutamos el layout
