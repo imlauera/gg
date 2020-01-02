@@ -221,7 +221,7 @@ def main():
                       help='Muestra mas informacion')
   parser.add_argument('--iters', type=int, 
                       help='Cantidad de iteraciones a efectuar', 
-                      default=250)
+                      default=200)
   parser.add_argument('file_name', 
                       help='Archivo del cual leer el grafo a dibujar')
   args = parser.parse_args()
